@@ -11,6 +11,16 @@ This command will compile the SDLGAME.c file with some warning flags and debuggi
 
 You can find more information about how to install and compile SDL2 C code on Linux/Ubuntu in [this web page](^2^) or [this web page](^3^).
 
+To compile the helper program, you need to have the gcc compiler, the pkg-config tool, and the event and pthread libraries installed on your system. You can either install them using prepared packages available with most Linux distributions, or download the source code and build them from scratch.
+
+To compile the helper program using gcc, you can use the following command:
+
+gcc -Wall -Wextra -g helper.c $(pkg-config --cflags --libs event_pthreads) -o helper-binary
+
+This command will compile the helper.c file with some warning flags and debugging symbols, and link it with the event and pthread libraries using the pkg-config tool. The output binary will be named helper-binary.
+
+You can find more information about how to install and compile event and pthread C code on Linux/Ubuntu in [this web page] or [this web page].
+
 Source: Conversation with Bing, 7/31/2023
 (1) How to install/compile SDL2 C code on Linux/Ubuntu. https://stackoverflow.com/questions/29876411/how-to-install-compile-sdl2-c-code-on-linux-ubuntu.
 (2) c - Compile an SDL project using gcc? - Stack Overflow. https://stackoverflow.com/questions/67233475/compile-an-sdl-project-using-gcc.
